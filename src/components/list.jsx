@@ -1,28 +1,39 @@
-import { VStack, StackDivider } from "@chakra-ui/react";
+import {
+  TableContainer,
+  Table,
+  StackDivider,
+  Thead,
+  Tr,
+  Th,
+  Tbody,
+} from "@chakra-ui/react";
 import { ItemTask } from "./item-task";
 import { UseTaskList } from "../api/useTaskList";
-
-const HeaderList = () => <p>nagłowek</p>;
+import { HeaderList } from "./header-list";
 
 export const List = () => {
+  const { task } = UseTaskList();
 
-   const { task } = UseTaskList()
-
-   return (
+  return (
     <>
-    <VStack
-      shadow="md"
-      borderWidth="1px"
-      p={5}
-      borderRadius="lg"
-      spacing={4}
-      align="stretch"
-      divider={<StackDivider borderColor="gray.200" />}
-    >
-      <HeaderList />
-      {task.map(item => <ItemTask key={item.id} />)}
-      
-    </VStack>
+      <TableContainer
+        shadow="md"
+        borderWidth="1px"
+        p={5}
+        borderRadius="lg"
+        spacing={4}
+        align="stretch"
+        divider={<StackDivider borderColor="gray.200" />}
+      >
+        <Table variant="simple">
+          <HeaderList />
+          <Tbody>
+            {task.map((item) => (
+              <ItemTask key={item.id} {...item} />
+            ))}
+          </Tbody>
+        </Table>
+      </TableContainer>
     </>
   );
 };

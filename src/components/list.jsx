@@ -2,9 +2,6 @@ import {
   TableContainer,
   Table,
   StackDivider,
-  Thead,
-  Tr,
-  Th,
   Tbody,
 } from "@chakra-ui/react";
 import { ItemTask } from "./item-task";

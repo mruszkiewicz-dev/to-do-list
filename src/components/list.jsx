@@ -12,6 +12,7 @@ import { UseTaskList } from "../api/useTaskList";
 import { HeaderList } from "./header-list";
 
 export const List = () => {
+  const { task } = UseTaskList();
 
   return (
     <>
@@ -26,11 +27,11 @@ export const List = () => {
       >
         <Table variant="simple">
           <HeaderList />
-          {/* <Tbody>
+          <Tbody>
             {task.map((item) => (
               <ItemTask key={item.id} {...item} />
             ))}
-          </Tbody> */}
+          </Tbody>
         </Table>
       </TableContainer>
     </>

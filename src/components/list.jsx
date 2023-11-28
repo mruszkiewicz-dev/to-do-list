@@ -18,7 +18,7 @@ export const List = () => {
         borderWidth="1px"
         p={5}
         borderRadius="lg"
-        spacing={4}
+        spacing={22}
         align="stretch"
         divider={<StackDivider borderColor="gray.200" />}
       >

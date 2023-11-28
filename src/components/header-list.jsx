@@ -3,7 +3,6 @@ import { Thead, Tr, Th } from "@chakra-ui/react";
 export const HeaderList = () => (
   <Thead>
     <Tr>
-      <Th>Id</Th>
       <Th>Nazwa</Th>
       <Th>Data</Th>
       <Th>Status</Th>

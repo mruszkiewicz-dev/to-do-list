@@ -44,7 +44,7 @@ const stepFields = {
   4: ["priority"],
 };
 
-const InputFiled = ({ fields, currentStep, onChange }) => (
+const InputFileds = ({ fields, currentStep, onChange }) => (
   <>
     {fields
       .filter((item) => stepFields[currentStep]?.includes(item.name))
@@ -69,7 +69,6 @@ export const AddTaskForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("Wysyłanie danych:", view.data);
-    dispatch({ type: SEND, payload: {} });
   };
 
   const fields = [
@@ -82,7 +81,7 @@ export const AddTaskForm = () => {
     <>
       <form onSubmit={handleSubmit}>
         <Flex alignItems="center" justifyContent="center" direction="column">
-          <InputFiled
+          <InputFileds
             fields={fields}
             onChange={dispatch}
             currentStep={view.step}

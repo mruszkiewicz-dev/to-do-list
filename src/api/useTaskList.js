@@ -4,7 +4,7 @@ export const UseTaskList = () => {
   const [task, setTask] = useState([]);
 
   useEffect(() => {
-   fetch('http://localhost:3004/tasks')
+   fetch('http://localhost:3004/data')
      .then((res) =>  res.json())
      .then((data) => setTask(data))
      .catch((err) => console.error(err));

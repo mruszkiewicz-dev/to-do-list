@@ -6,6 +6,27 @@
       "date": "12.12.2023",
       "status": "todo",
       "priority": 1
+    },
+    {
+      "id": 2,
+      "name": "Task 1",
+      "date": "12.12.2023",
+      "status": "todo",
+      "priority": 1
+    },
+    {
+      "id": 3,
+      "name": "Task 1",
+      "date": "12.12.2023",
+      "status": "todo",
+      "priority": 2
+    },
+    {
+      "id": 4,
+      "name": "Task 1",
+      "date": "12.12.2023",
+      "status": "todo",
+      "priority": 3
     }
   ]
 }

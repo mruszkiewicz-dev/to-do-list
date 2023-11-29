@@ -1,16 +1,10 @@
-import {
-  TableContainer,
-  Table,
-  StackDivider,
-  Tbody,
-} from "@chakra-ui/react";
+import { TableContainer, Table, StackDivider, Tbody } from "@chakra-ui/react";
 import { ItemTask } from "./item-task";
 import { UseTaskList } from "../api/useTaskList";
 import { HeaderList } from "./header-list";
 
 export const List = () => {
   const { task } = UseTaskList();
-
   return (
     <>
       <TableContainer

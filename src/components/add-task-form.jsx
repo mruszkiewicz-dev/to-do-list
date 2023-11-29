@@ -1,6 +1,7 @@
 import { useReducer } from "react";
 import { Button, Flex } from "@chakra-ui/react";
 import { ControlInput } from "./control-input";
+import { UseTaskList } from "../api/useTaskList";
 
 const NEXT = "NEXT";
 const PREV = "PREV";
@@ -50,10 +51,12 @@ const InputFileds = ({ fields, currentStep, onChange }) => (
       .filter((item) => stepFields[currentStep]?.includes(item.name))
       .map((item) => (
         <ControlInput
+          type={item.type}
           key={item.name}
           label={item.label}
           name={item.name}
           value={item.value}
+          options={item.options}
           onChange={(value) => onChange({ type: UPDATE_DATA, payload: value })}
         />
       ))}
@@ -63,19 +66,41 @@ const InputFileds = ({ fields, currentStep, onChange }) => (
 export const AddTaskForm = () => {
   const [view, dispatch] = useReducer(formReducer, {
     step: 1,
-    data: {},
+    data: { status: "To do" },
   });
+
+  const { addUser } = UseTaskList();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Wysyłanie danych:", view.data);
+    addUser(view.data);
   };
 
   const fields = [
-    { name: "name", value: view.data.name, label: "Nazwa zdania" },
-    { name: "date", value: view.data.date, label: "Data" },
-    { name: "status", value: view.data.status, label: "Status" },
-    { name: "priority", value: view.data.priority, label: "Priorytet" },
+    {
+      name: "name",
+      value: view.data.name,
+      label: "Nazwa zdania",
+      type: "input",
+    },
+    { name: "date", value: view.data.date, label: "Data", type: "date" },
+    {
+      name: "status",
+      value: view.data.status,
+      label: "Status",
+      type: "input",
+    },
+    {
+      name: "priority",
+      value: view.data.priority,
+      label: "Priorytet",
+      type: "select",
+      options: [
+        { value: 1, name: "Wysoki" },
+        { value: 2, name: "Średni" },
+        { value: 3, name: "Niski" },
+      ],
+    },
   ];
   return (
     <>

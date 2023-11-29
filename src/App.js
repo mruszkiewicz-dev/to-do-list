@@ -20,7 +20,6 @@ function App() {
       </Heading>
       <Box mt={10}>
         <AddTask/>
-
       </Box>
       <Box mt={5}>
         <List />

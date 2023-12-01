@@ -5,11 +5,13 @@ import { AddTaskForm } from "./add-task-form";
 export const AddTask = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const setClose = () => setIsOpen(false)
+
   return (
     <Flex alignItems="center" justifyContent="center" direction="column" mt={5}>
       {isOpen && (
         <Box>
-          <AddTaskForm />
+          <AddTaskForm setClose={setClose} />
         </Box>
       )}
       <Button

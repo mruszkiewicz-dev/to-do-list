@@ -63,10 +63,10 @@ const InputFileds = ({ fields, currentStep, onChange }) => (
   </>
 );
 
-export const AddTaskForm = () => {
+export const AddTaskForm = ({ setClose }) => {
   const [view, dispatch] = useReducer(formReducer, {
     step: 1,
-    data: { status: "To do" },
+    data: { status: "To do", priority: "2" },
   });
 
   const { addUser } = UseTaskList();
@@ -74,6 +74,7 @@ export const AddTaskForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     addUser(view.data);
+    setClose();
   };
 
   const fields = [

@@ -3,11 +3,11 @@ import { Icon, Flex } from "@chakra-ui/react";
 export const StatusIcon = ({ status }) => {
   const getColor = (status) => {
     switch (status) {
-      case 1:
+      case "1":
         return "red.500";
-      case 2:
+      case "2":
         return "orange.500";
-      case 3:
+      case "3":
         return "green.500";
       default:
         return "gray.500";

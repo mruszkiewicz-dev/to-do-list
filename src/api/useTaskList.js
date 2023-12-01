@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 
 export const UseTaskList = () => {
-  const [task, setTask] = useState([]);
+  const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:3004/data")
       .then((res) => res.json())
-      .then((data) => setTask(data))
+      .then((data) => setTasks(data))
       .catch((err) => console.error(err));
-  }, [task]);
+  }, [tasks]);
 
   const addUser = (newUser) => {
     fetch("http://localhost:3004/data", {
@@ -19,10 +19,10 @@ export const UseTaskList = () => {
       body: JSON.stringify({
         ...newUser,
       }),
-    }).then(setTask((prev) => [...prev, newUser]));
+    }).then(setTasks((prev) => [...prev, newUser]));
 
     /*     setTask((prev) => [...prev, newUser]);
      */
   };
-  return { task, addUser };
+  return { tasks, addUser };
 };

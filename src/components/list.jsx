@@ -1,12 +1,20 @@
+import { useState } from "react";
 import { TableContainer, Table, StackDivider, Tbody } from "@chakra-ui/react";
 import { ItemTask } from "./item-task";
 import { UseTaskList } from "../api/useTaskList";
 import { HeaderList } from "./header-list";
+import { Search } from "./search";
 
 export const List = () => {
-  const { task } = UseTaskList();
+  const [phrase, setPhrase] = useState("");
+  const { tasks } = UseTaskList();
+  const handleSearchChange = (searchValue) => {
+    setPhrase(searchValue)
+    console.log("Nowa wartość wyszukiwania:", searchValue);
+  };
   return (
     <>
+      <Search onSearchChange={handleSearchChange} />
       <TableContainer
         shadow="md"
         borderWidth="1px"
@@ -19,9 +27,11 @@ export const List = () => {
         <Table variant="simple">
           <HeaderList />
           <Tbody>
-            {task.map((item) => (
-              <ItemTask key={item.id} {...item} />
-            ))}
+            {tasks
+              .filter((task) => task && task.name && task.name.includes(phrase))
+              .map((item) => (
+                <ItemTask key={item.id} {...item} />
+              ))}
           </Tbody>
         </Table>
       </TableContainer>

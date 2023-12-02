@@ -1,104 +1,32 @@
 {
   "data": [
     {
-      "id": 1,
-      "name": "Task 1",
-      "date": "12.12.2023",
-      "status": "todo",
-      "priority": 1
-    },
-    {
-      "id": 2,
-      "name": "Task 1",
-      "date": "12.12.2023",
-      "status": "todo",
-      "priority": 1
-    },
-    {
-      "id": 3,
-      "name": "Task 1",
-      "date": "12.12.2023",
-      "status": "todo",
-      "priority": 2
-    },
-    {
-      "id": 4,
-      "name": "Task 1",
-      "date": "12.12.2023",
-      "status": "todo",
-      "priority": 3
+      "status": "To do",
+      "priority": "1",
+      "name": "Zadanie 1",
+      "date": "2023-12-04T15:06",
+      "id": 1
     },
     {
       "status": "To do",
-      "name": "umyć dupe",
-      "date": "2023-11-29T18:58",
-      "id": 5
-    },
-    {
-      "status": "To do",
-      "name": "as",
-      "date": "2023-11-10T15:26",
-      "id": 6
-    },
-    {
-      "status": "To do",
-      "name": "12",
-      "date": "2023-11-30T10:47",
       "priority": "2",
-      "id": 7
-    },
-    {
-      "status": "To do",
-      "name": "as",
-      "id": 8
+      "name": "Zadanie 2",
+      "date": "2023-12-14T15:06",
+      "id": 2
     },
     {
       "status": "To do",
       "priority": "3",
-      "id": 9
+      "name": "Zadanie 3",
+      "date": "2023-12-07T15:06",
+      "id": 3
     },
     {
-      "status": "To do",
+      "status": "Done",
       "priority": "2",
-      "name": "as",
-      "date": "2023-11-30T11:29",
-      "id": 10
-    },
-    {
-      "status": "To do",
-      "priority": "2",
-      "name": "as",
-      "date": "2023-11-30T11:29",
-      "id": 11
-    },
-    {
-      "status": "To do",
-      "priority": "2",
-      "name": "as",
-      "date": "2023-11-30T11:29",
-      "id": 12
-    },
-    {
-      "status": "To do",
-      "priority": "2",
-      "name": "1",
-      "date": "2023-12-02T11:33",
-      "id": 13
-    },
-    {
-      "status": "To do",
-      "priority": "2",
-      "id": 14
-    },
-    {
-      "status": "To do",
-      "priority": "2",
-      "id": 15
-    },
-    {
-      "status": "To do",
-      "priority": "2",
-      "id": 16
+      "name": "Zadanie 4",
+      "date": "2023-12-15T15:07",
+      "id": 4
     }
   ]
 }

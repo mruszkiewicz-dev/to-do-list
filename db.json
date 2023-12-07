@@ -1,21 +1,21 @@
 {
   "data": [
     {
-      "status": "To do",
+      "status": "Done",
       "priority": "1",
       "name": "Zadanie 1",
       "date": "2023-12-04T15:06",
       "id": 1
     },
     {
-      "status": "To do",
+      "status": "Done",
       "priority": "2",
       "name": "Zadanie 2",
       "date": "2023-12-14T15:06",
       "id": 2
     },
     {
-      "status": "To do",
+      "status": "Done",
       "priority": "3",
       "name": "Zadanie 3",
       "date": "2023-12-07T15:06",
@@ -27,6 +27,102 @@
       "name": "Zadanie 4",
       "date": "2023-12-15T15:07",
       "id": 4
+    },
+    {
+      "status": "Done",
+      "priority": "2",
+      "name": "1",
+      "date": "2023-12-07T09:04",
+      "id": 5
+    },
+    {
+      "status": "Done",
+      "priority": "2",
+      "name": "123",
+      "id": 6
+    },
+    {
+      "status": "Done",
+      "priority": "2",
+      "name": "122",
+      "id": 7
+    },
+    {
+      "status": "Done",
+      "priority": "2",
+      "name": "1",
+      "id": 8
+    },
+    {
+      "status": "Done",
+      "priority": "2",
+      "name": "qwe",
+      "id": 9
+    },
+    {
+      "status": "Done",
+      "priority": "2",
+      "name": "Michał Ruszkiewicz Ruszkiewicz",
+      "id": 10
+    },
+    {
+      "status": "To do",
+      "priority": "2",
+      "id": 11
+    },
+    {
+      "status": "Done",
+      "priority": "2",
+      "name": "1222",
+      "id": 12
+    },
+    {
+      "status": "Done",
+      "priority": "2",
+      "name": "123222",
+      "id": 13
+    },
+    {
+      "status": "Done",
+      "priority": "2",
+      "name": "123",
+      "id": 14
+    },
+    {
+      "status": "To do",
+      "priority": "2",
+      "id": 15
+    },
+    {
+      "status": "Done",
+      "priority": "2",
+      "name": "asd",
+      "id": 16
+    },
+    {
+      "status": "Done",
+      "priority": "2",
+      "name": "asd",
+      "id": 17
+    },
+    {
+      "status": "Done",
+      "priority": "2",
+      "name": "asd",
+      "date": "2023-12-08T15:03",
+      "id": 18
+    },
+    {
+      "status": "To do",
+      "priority": "2",
+      "id": 19
+    },
+    {
+      "status": "To do",
+      "priority": "2",
+      "name": "asd",
+      "date": "2023-12-06T15:14",
+      "id": 20
     }
   ]
 }

@@ -1,6 +1,6 @@
 import { FormControl, FormLabel, Input, Select } from "@chakra-ui/react";
 
-export const ControlInput = ({
+export const MyInput = ({
   label,
   name,
   value,

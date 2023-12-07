@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Box, Button, Flex } from "@chakra-ui/react";
-import { AddTaskForm } from "./add-task-form";
+import { AddTaskForm } from "./AddTaskForm";
 
 export const AddTask = () => {
   const [isOpen, setIsOpen] = useState(false);

@@ -1,14 +1,14 @@
 import { Tr, Td } from "@chakra-ui/react";
-import { StatusIcon } from "./status-icon";
+import { StatusIcon } from "./StatusIcon";
 import { IconButton } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
-import { UseTaskList } from "../api/useTaskList";
 import { useState } from "react";
+import { useApi } from "../api/useApi";
 
 export const ItemTask = ({ id, name, date, status, priority }) => {
   const [taskStatus, setTaskStatus] = useState(status);
 
-  const { updateTaskStatus } = UseTaskList();
+  const { updateTaskStatus } = useApi();
 
   const handleClick = () => {
     const newStatus = taskStatus === "Done" ? "To do" : "Done";

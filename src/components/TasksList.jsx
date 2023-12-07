@@ -1,18 +1,31 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TableContainer, Table, StackDivider, Tbody } from "@chakra-ui/react";
-import { ItemTask } from "./item-task";
-import { UseTaskList } from "../api/useTaskList";
-import { HeaderList } from "./header-list";
-import { Search } from "./search";
+import { ItemTask } from "./ItemTask";
+import { HeaderList } from "./HeaderList";
+import { Search } from "./Search";
+import { useApi } from "../api/useApi";
 
-export const List = () => {
+export const TasksList = () => {
   const [phrase, setPhrase] = useState("");
-  const { tasks } = UseTaskList();
+  const [tasks, setTasks] = useState([]);
+  
+  const { getTasks } = useApi();
+
+  const fetchTasks = async () => {
+    const data = await getTasks();
+    setTasks(data);
+  };
+
+  useEffect(() => {
+    fetchTasks();
+  }, [fetchTasks]);
+
   const handleSearchChange = (searchValue) => {
-    setPhrase(searchValue)
+    setPhrase(searchValue);
   };
   return (
     <>
+      {console.log(tasks)}
       <Search onSearchChange={handleSearchChange} />
       <TableContainer
         shadow="md"
@@ -22,12 +35,19 @@ export const List = () => {
         spacing={22}
         align="stretch"
         divider={<StackDivider borderColor="gray.200" />}
+        minW="100%"
       >
         <Table variant="simple">
           <HeaderList />
           <Tbody>
             {tasks
-              .filter((task) => task && task.name && task.name.includes(phrase) && task.status === 'To do' )
+              .filter(
+                (task) =>
+                  task &&
+                  task.name &&
+                  task.name.includes(phrase) &&
+                  task.status === "To do"
+              )
               .map((item) => (
                 <ItemTask key={item.id} {...item} />
               ))}
@@ -48,7 +68,13 @@ export const List = () => {
           <HeaderList />
           <Tbody>
             {tasks
-              .filter((task) => task && task.name && task.name.includes(phrase) && task.status === 'Done' )
+              .filter(
+                (task) =>
+                  task &&
+                  task.name &&
+                  task.name.includes(phrase) &&
+                  task.status === "Done"
+              )
               .map((item) => (
                 <ItemTask key={item.id} {...item} />
               ))}

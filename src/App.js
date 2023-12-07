@@ -1,6 +1,6 @@
 import { Flex, Heading, Highlight, Box } from "@chakra-ui/react";
-import { List } from "./components/list";
-import { AddTask } from "./components/add-task";
+import { TasksList } from "./components/TasksList";
+import { AddTask } from "./components/AddTask";
 
 function App() {
   return (
@@ -19,10 +19,10 @@ function App() {
         </Highlight>
       </Heading>
       <Box mt={10}>
-        <AddTask/>
+        <AddTask />
       </Box>
       <Box mt={5}>
-        <List />
+        <TasksList />
       </Box>
     </Flex>
   );

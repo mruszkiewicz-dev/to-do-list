@@ -1,7 +1,7 @@
 import { useReducer } from "react";
 import { Button, Flex } from "@chakra-ui/react";
-import { ControlInput } from "./control-input";
-import { UseTaskList } from "../api/useTaskList";
+import { MyInput } from "./MyInput";
+import { useApi } from "../api/useApi";
 
 const NEXT = "NEXT";
 const PREV = "PREV";
@@ -50,7 +50,7 @@ const InputFileds = ({ fields, currentStep, onChange }) => (
     {fields
       .filter((item) => stepFields[currentStep]?.includes(item.name))
       .map((item) => (
-        <ControlInput
+        <MyInput
           type={item.type}
           key={item.name}
           label={item.label}
@@ -69,11 +69,11 @@ export const AddTaskForm = ({ setClose }) => {
     data: { status: "To do", priority: "2" },
   });
 
-  const { addUser } = UseTaskList();
+  const { addTask } = useApi();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    addUser(view.data);
+    addTask(view.data);
     setClose();
   };
 
